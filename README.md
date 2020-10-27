@@ -2,5 +2,5 @@
 Example how to use fast api, deploing and create apiari docu with dredd
 
 # How to start
-Starting api
+Starting api --
 ```uvicorn main:app```
