@@ -10,7 +10,6 @@ cwd_path = Path('../save_folder/')
 def convert_to_string(bytes):
     data = bytes.decode('utf-8').splitlines()
     df = pd.DataFrame(data)
-    print(df)
     return parse_csv(df)
 
 def parse_csv(df):
