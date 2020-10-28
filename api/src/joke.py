@@ -1,16 +1,21 @@
 import json
+import os
 from json import JSONEncoder
 from pathlib import Path
 from collections import OrderedDict
 
-# cwd_path = Path('json/jokes.json')  # For uvicorn
+local_path = Path('json/jokes.json')  # For uvicorn
+cwd_path = Path('api/json/jokes.json')
 
-
-cwd_path = Path('api/json/jokes.json') # For heroku / local
+cloud_path = Path('api/json/jokes.json') # For heroku / local
 
 
 def read_json():
     # Read json file
+    if os.path.exists(local_path):
+        cwd_path = local_path
+    else:
+        cwd_path = cloud_path
     with open(cwd_path, 'r') as file:
         data = json.load(file)
         return data
