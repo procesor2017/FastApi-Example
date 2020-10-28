@@ -7,8 +7,8 @@ from pydantic import BaseModel
 
 from typing import Optional
 from fastapi import FastAPI, File, UploadFile
-from create_data import convert_to_string, return_string
-from joke import read_json, get_joke, insert_joke, delete_joke_by
+from src.files import *
+from src.joke import *
 
 
 app = FastAPI()
@@ -27,10 +27,6 @@ class Joke(BaseModel):
 @app.get("/")
 def read_root():
     return {"Ukázková stránka"}
-
-@app.get("/hello")
-def read_hello():
-    return {"Hello": "World"}
 
 @app.post('/files/check_content_json')
 async def upload_file(file: UploadFile = File(...)):

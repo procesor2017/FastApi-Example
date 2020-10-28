@@ -1,6 +1,18 @@
 [
     {
-        "id": 2,
+        "id": 0,
+        "text": "q. How do you comfort a JavaScript bug? a. You console it.",
+        "question": "How do you comfort a JavaScript bug?",
+        "answer": "You console it.",
+        "author": "elijahmanor",
+        "created": "09/06/2013",
+        "tags": [
+            "javascript"
+        ],
+        "rating": 1
+    },
+    {
+        "id": 1,
         "text": "q. Why did the child component have such great self-esteem? a. Because its parent kept giving it `props`!",
         "question": "Why did the child component have such great self-esteem?",
         "answer": "Because its parent kept giving it `props`!",
@@ -11,5 +23,38 @@
             "react"
         ],
         "rating": 1
+    },
+    {
+        "id": 2,
+        "text": "q. Why couldn\u00e2\u20ac\u2122t the React component understand the joke? a. Because it didn\u00e2\u20ac\u2122t get the context.",
+        "question": "Why couldn\u00e2\u20ac\u2122t the React component understand the joke?",
+        "answer": "Because it didn\u00e2\u20ac\u2122t get the context.",
+        "author": "elijahmanor",
+        "created": "11/27/2018",
+        "tags": [
+            "javascript",
+            "react"
+        ],
+        "rating": 2
+    },
+    {
+        "id": 3,
+        "text": "Dev1 saw a strange JavaScript function & asked, \"What is this?\". Dev2 responded, \"I don't know. I would've called you, but I was in a bind\"",
+        "author": "elijahmanor",
+        "created": "09/09/2013",
+        "tags": [
+            "javascript"
+        ],
+        "rating": 3
+    },
+    {
+        "id": 4,
+        "text": "Two JavaScript developers walked into the variable `bar`. Ouch!",
+        "author": "elijahmanor",
+        "created": "09/10/2013",
+        "tags": [
+            "javascript"
+        ],
+        "rating": 3
     }
 ]

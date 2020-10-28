@@ -17,7 +17,7 @@ def read_json():
 def get_joke(id):
     with open (cwd_path, 'r') as file:
         data = json.load(file)
-        print(data[id])
+        return data[id]
 
 # Insret joke to db #################################################
 '''
@@ -27,10 +27,9 @@ Bcs old python in 3.5+ using just jsons
 def insert_joke(body):
     with open (cwd_path) as json_file:
         data = json.load(json_file)
-        
-        body['id'] = len(data) + 1
 
         add_data = OrderedDict(body)
+        add_data['id'] = len(data)
         add_data.move_to_end('id', last = False)
 
         data.append(add_data) 
@@ -38,6 +37,7 @@ def insert_joke(body):
 
     with open(cwd_path,'w') as f: 
         json.dump(data, f, indent=4, cls=MyEncoder)
+    return 'Joke was inserted under id: ' + str(len(data)-1 )
         
 class MyEncoder(JSONEncoder):
     def default(self, o):
