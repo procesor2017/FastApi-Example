@@ -6,7 +6,7 @@ from os import listdir
 from os.path import isfile, join
 from pathlib import Path
 
-cwd_path = Path('../save_folder/')
+cwd_path = Path('save_folder/')
 
 # Function for reading json
 def convert_to_string(bytes):
