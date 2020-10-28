@@ -7,12 +7,12 @@ from pydantic import BaseModel
 
 from typing import Optional
 from fastapi import FastAPI, File, UploadFile
-from api.files import convert_to_string, return_string
+from api.files import convert_to_string, return_string, upload_new_file
 from api.joke import read_json, get_joke, insert_joke, delete_joke_by
 
 
 app = FastAPI()
-cwd_path = Path('../save_folder')
+cwd_path = Path('./save_folder')
 
 class Joke(BaseModel):
     text: str
@@ -36,17 +36,7 @@ async def upload_file(file: UploadFile = File(...)):
     
 @app.post("/files/upload")
 def create_file(file: UploadFile = File(...)):
-    # Save file on disk 
-    # Great debate on how to do it without much loss of frames on link below:
-    # https://github.com/tiangolo/fastapi/issues/426
-    # reading file for return contents of the file
-    upload_folder = cwd_path
-    file_object = file.file
-    #create empty file to copy the file_object to
-    upload_folder = open(os.path.join(upload_folder, file.filename), 'wb+')
-    shutil.copyfileobj(file_object, upload_folder)
-    upload_folder.close()
-    return {"filename": file.filename}
+    return upload_new_file(file)
 
 @app.get('/files/savefolder')
 def check_save_folder():
