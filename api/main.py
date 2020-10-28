@@ -72,3 +72,6 @@ def input_joke(joke: Joke):
 def delete_joke(joke_id: int):
     return delete_joke_by(joke_id)
 
+
+if __name__ == "__main__":
+    uvicorn.run(app, host='0.0.0.0')
