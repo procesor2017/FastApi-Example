@@ -1,7 +1,15 @@
 image: python:3.7
 
 stages: 
+    - test
     - deploy
+
+
+test:
+  stage: test
+  script:
+    - echo "Hello world"
+
 
 heroku-deploy:
   stage: deploy
@@ -10,5 +18,3 @@ heroku-deploy:
     - apt-get install -y ruby-dev
     - gem install dpl
     - dpl --provider=heroku --app=app-from-api --api-key=$HEROKU_PRODUCTION_API_KEY
-  only:
-    - master
