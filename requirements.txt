@@ -1,4 +1,4 @@
 fastApi==0.61.1
 uvicorn==0.12.2
 pydantic==1.6.1
-panda==0.3.1
+pandas==0.3.1
