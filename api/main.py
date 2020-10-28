@@ -3,15 +3,14 @@ from os import listdir
 from os.path import isfile, join
 from pydantic import BaseModel
 import uvicorn
-
+import os
 from typing import Optional
 from fastapi import FastAPI, File, UploadFile
-from api.src.files import convert_to_string, return_string, upload_new_file
+from api.src.files import convert_to_string, return_string, upload_new_file, return_files
 from api.src.joke import read_json, get_joke, insert_joke, delete_joke_by
 
 
 app = FastAPI()
-cwd_path = Path('save_folder/')
 
 
 class Joke(BaseModel):
@@ -43,8 +42,7 @@ def create_file(file: UploadFile = File(...)):
 
 @app.get('/files/savefolder')
 def check_save_folder():
-    onlyfiles = [f for f in listdir(cwd_path) if isfile(join(cwd_path, f))]
-    return onlyfiles
+    return return_files()
 
 
 @app.get('/files/savefolder/')
