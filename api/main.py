@@ -26,7 +26,7 @@ class Joke(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"Ukázková stránka"}
+    return {"Hello": "World"}
 
 @app.post('/files/check_content_json')
 async def upload_file(file: UploadFile = File(...)):
