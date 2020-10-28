@@ -7,8 +7,8 @@ from pydantic import BaseModel
 
 from typing import Optional
 from fastapi import FastAPI, File, UploadFile
-from src.files import *
-from src.joke import *
+from src.files import convert_to_string, return_string
+from src.joke import read_json, get_joke, insert_joke, delete_joke_by
 
 
 app = FastAPI()
