@@ -5,7 +5,7 @@ from os.path import isfile, join
 from pathlib import Path
 from collections import OrderedDict
 
-cwd_path = Path('api/json/jokes.json') # For uvicorn
+cwd_path = Path('json/jokes.json') # For uvicorn
 # cwd_path = Path('api/json/jokes.json') # For creating
 
 def read_json():
