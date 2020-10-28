@@ -2,6 +2,7 @@ from pathlib import Path
 from os import listdir
 from os.path import isfile, join
 from pydantic import BaseModel
+import uvicorn
 
 from typing import Optional
 from fastapi import FastAPI, File, UploadFile
@@ -70,3 +71,7 @@ def input_joke(joke: Joke):
 @app.post('/jokes/delete/')
 def delete_joke(joke_id: int):
     return delete_joke_by(joke_id)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host='0.0.0.0')
