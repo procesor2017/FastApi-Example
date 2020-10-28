@@ -11,7 +11,7 @@ from api.src.joke import read_json, get_joke, insert_joke, delete_joke_by
 
 
 app = FastAPI()
-cwd_path = Path('save_folder')
+cwd_path = Path('../save_folder')
 
 
 class Joke(BaseModel):
