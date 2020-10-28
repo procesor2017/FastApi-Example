@@ -1,0 +1,14 @@
+image: python:3.7
+
+stages: 
+    - deploy
+
+heroku-deploy:
+  stage: deploy
+  script:
+    - apt-get update -qy
+    - apt-get install -y ruby-dev
+    - gem install dpl
+    - dpl --provider=heroku --app=app-from-api --api-key=$HEROKU_PRODUCTION_API_KEY
+  only:
+    - master
