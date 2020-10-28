@@ -5,11 +5,12 @@ from pydantic import BaseModel
 
 from typing import Optional
 from fastapi import FastAPI, File, UploadFile
-from src.files import convert_to_string, return_string, upload_new_file
-from src.joke import read_json, get_joke, insert_joke, delete_joke_by
+from api.src.files import convert_to_string, return_string, upload_new_file
+from api.src.joke import read_json, get_joke, insert_joke, delete_joke_by
+
 
 app = FastAPI()
-cwd_path = Path('../save_folder')
+cwd_path = Path('save_folder')
 
 
 class Joke(BaseModel):
